@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-dashboard-articles-detail-[slug]-js",
+    "path": "/dashboard/articles/detail/[slug]/",
+    "result": {"pageContext":{"matchPath":"/dashboard/articles/detail/:slug"}},
+    "staticQueryHashes": [],
+    "matchPath": "/dashboard/articles/detail/:slug"}

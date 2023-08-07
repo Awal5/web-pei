@@ -17,12 +17,7 @@ const DashboardHeader = ({ logout }) => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <input
-        className="form-control form-control-dark w-100 rounded-0 border-0"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
+
       <div className="navbar-nav">
         <div className="nav-item text-nowrap">
           <button className="nav-link px-3" onClick={logout}>

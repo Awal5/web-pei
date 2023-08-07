@@ -1,64 +1,64 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "@/css/editor.css";
-import Axios from "axios";
+import { convertToRaw, EditorState } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import useInput from "@/hooks/useInput";
+import { createArticle } from "@/data";
+import { navigate, Link } from "gatsby";
+import toolbar from "@/config/toolbar";
 
 const CreateArticle = () => {
-  const [editorState, setEditorState] = useState();
-  const [title, setTitle] = useState("");
-  const [img, setImg] = useState();
+  const [title, onTitleChange] = useInput();
+  const [images, setImages] = useState([]);
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
-  const onEditorStateChange = editorState => {
-    setEditorState(editorState);
+  const onImgChange = e => {
+    setImages(e.target.files);
   };
 
-  const onImgChange = () => {
-    setImg(img);
+  const onEditorStateChange = newEditorState => {
+    setEditorState(newEditorState);
   };
+  const content = JSON.stringify(convertToRaw(editorState.getCurrentContent()));
+  const description = draftToHtml(JSON.parse(content));
 
-  const onTitleChange = () => {
-    setTitle(title);
-  };
+  const formData = new FormData();
+  formData.append("title", title);
 
-  const onSubmitHandler = () => {
-    // useEffect(() => {
-    //   async function createArticle() {
-    //     try {
-    //       const response = await Axios.post("https://4000/articles/create", {
-    //         data: {
-    //           title,
-    //           img,
-    //           editorState,
-    //         },
-    //       });
-    //     }
-    //   }
-    // });
-  };
+  for (var i = 0; i < images.length; i++) {
+    formData.append(`images`, images[i]);
+  }
 
-  const toolbar = {
-    options: [
-      "inline",
-      "blockType",
-      "fontSize",
-      "fontFamily",
-      "list",
-      "textAlign",
-      "link",
-      "emoji",
-      "history",
-    ],
+  formData.append("description", description);
+
+  const onSubmitHandler = async e => {
+    e.preventDefault();
+    try {
+      await createArticle(formData);
+    } catch (error) {
+      console.log(error);
+    }
+    console.log({ title, images, description });
+    navigate("/dashboard/articles");
   };
 
   return (
     <>
+      <Link to="/dashboard/articles" className="btn btn-secondary mt-4">
+        <i className="bi bi-arrow-left"></i> &nbsp;Kembali
+      </Link>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 className="h1">Create Article</h1>
+        <h1 className="h1">Buat Artikel</h1>
       </div>
-      <Form className="mt-4">
+      <Form
+        className="mt-4"
+        onSubmit={onSubmitHandler}
+        encType="multipart/form-data"
+      >
         <Form.Group className="my-3">
           <Form.Label>Judul</Form.Label>
           <Form.Control
@@ -71,7 +71,14 @@ const CreateArticle = () => {
         </Form.Group>
         <Form.Group className="my-3">
           <Form.Label>Gambar Artikel</Form.Label>
-          <Form.File required onChange={onImgChange} />
+          <Form.Control
+            type="file"
+            accept="images"
+            name="images"
+            required
+            onChange={onImgChange}
+            multiple
+          />
         </Form.Group>
         <Form.Group>
           <Form.Label>Deskripsi Artikel</Form.Label>
@@ -84,9 +91,9 @@ const CreateArticle = () => {
             onEditorStateChange={onEditorStateChange}
           />
         </Form.Group>
-        <Button type="submit" onClick={onSubmitHandler}>
-          Submit
-        </Button>
+        <Form.Group>
+          <Button type="submit">Submit</Button>
+        </Form.Group>
       </Form>
     </>
   );

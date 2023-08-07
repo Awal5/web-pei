@@ -1,67 +1,81 @@
 import React from "react";
 import { showFormattedDate } from "@/data";
 import { Link } from "gatsby";
-import parse from "html-react-parser";
+import { Button } from "react-bootstrap";
+import Loading from "@/components/atoms/Loading";
+import EmptyState from "@/components/atoms/emptyState";
 
 const MainProduct = props => {
-  const { products, errors } = props;
+  const { products, errors, onDelete, loading } = props;
+
+  if (loading) {
+    return <Loading />;
+  } else if (products.length === 0) {
+    return (
+      <EmptyState
+        title="Produk"
+        errors={errors}
+        addLink="/dashboard/products/create"
+      />
+    );
+  }
+
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 className="h2">Products</h1>
+        <h1 className="h2">Produk</h1>
       </div>
       <div className="table-responsive">
         <Link className="btn btn-success mb-3" to="/dashboard/products/create">
-          Add Data +
+          Tambahkan Produk +
         </Link>
         <table className="table table-striped table-sm text-center">
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Product Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Image</th>
-              <th scope="col">Created At</th>
-              <th scope="col">Action</th>
+              <th scope="col">Nama Produk</th>
+              <th scope="col">Dibuat Pada</th>
+              <th scope="col">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            {products.length === 0 ? (
-              <p className="position-absolute bottom-50 start-50">{errors}</p>
-            ) : (
-              products.map((product, index) => {
-                return (
-                  <tr key={product.id}>
-                    <td>{index + 1}</td>
-                    <td>
-                      <p className="text-break">{product.name}</p>
-                    </td>
-                    <td>{parse(product.description)}</td>
-                    <td>
-                      <img
-                        src={`http://localhost:4000/images/${product.image}`}
-                        alt=""
-                        className="img-thumbnail previewImg"
-                      />
-                    </td>
-                    <td>{showFormattedDate(product.createdAt)}</td>
-                    <td>
-                      <a className="btn btn-primary " href="" title="Detail">
-                        <i className="bi bi-eye"></i>
-                      </a>
+            {products.map((product, index) => {
+              return (
+                <tr key={product.id}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <p className="text-break">{product.name}</p>
+                  </td>
 
-                      <a className="btn btn-warning mx-3" href="" title="Edit">
-                        <i className="bi bi-pencil-square"></i>
-                      </a>
+                  <td>{showFormattedDate(product.createdAt)}</td>
+                  <td>
+                    <Link
+                      className="btn btn-primary"
+                      to={`/dashboard/products/${product.slug}`}
+                      title="Detail"
+                    >
+                      <i className="bi bi-eye"></i>
+                    </Link>
 
-                      <a className="btn btn-danger" href="" title="Delete">
-                        <i className="bi bi-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                );
-              })
-            )}
+                    <Link
+                      to={`/dashboard/products/edit/${product.slug}`}
+                      className="btn btn-warning mx-3"
+                      title="Edit"
+                    >
+                      <i className="bi bi-pencil-square"></i>
+                    </Link>
+
+                    <Button
+                      className="btn btn-danger"
+                      title="Delete"
+                      onClick={() => onDelete(product.slug)}
+                    >
+                      <i className="bi bi-trash"></i>
+                    </Button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

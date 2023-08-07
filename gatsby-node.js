@@ -5,6 +5,7 @@
  */
 
 const path = require("path");
+const axios = require("axios");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -17,22 +18,26 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@/css": path.resolve(__dirname, "src/assets/css/"),
         "@/images": path.resolve(__dirname, "src/assets/images/"),
         "@/hooks": path.resolve(__dirname, "src/hooks/"),
+        "@/config": path.resolve(__dirname, "src/config"),
       },
     },
   });
 };
 
-// exports.createPages = async ({ actions, graphql }) => {
+// exports.createPagesStatefully = async ({ actions }) => {
 //   const { createPage } = actions;
 
-//   const response = await Axios.get("http://localhost:4000/blog/articles");
+//   // Mengambil data dari API menggunakan Axios
+//   const response = await axios.get("http://localhost:4000/products");
+//   const products = response.data;
 
-//   response.data.forEach(node => {
+//   // Membuat halaman detail untuk setiap post
+//   products.forEach(product => {
 //     createPage({
-//       path: `/articleDetail/${node.slug}`,
-//       component: path.resolve("./src/pages/articleDetail.js"),
+//       path: `/dashboard/products/${product.slug}`,
+//       component: path.resolve("./src/pages/dashboard/products/detail.js"), // Ganti dengan path template Anda
 //       context: {
-//         slug: node.slug,
+//         product,
 //       },
 //     });
 //   });

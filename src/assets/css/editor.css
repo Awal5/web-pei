@@ -1,7 +1,10 @@
 .wrapper-class {
-  height: 400px;
+  height: 350px;
+  margin-bottom: 60px;
 }
 
 .editor-class {
-  background-color: #272525;
+  background-color: #eeeded;
+  border: 1px solid black;
+  border-radius: 5px;
 }

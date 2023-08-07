@@ -19,7 +19,7 @@ const Login = () => {
         { withCredentials: true }
       );
       alert(`Selamat Datang ${username}`);
-      navigate("/dashboard/");
+      navigate("/dashboard/articles");
     } catch (err) {
       if (err.response) {
         setMsg(err.response.data.msg);

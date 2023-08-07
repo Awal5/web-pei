@@ -1035,11 +1035,12 @@ export const CallToActionTwoData = [
   },
 ];
 
-import Axios from "axios";
+import axios from "axios";
+const URL = "http://localhost:4000";
 //get
 export const getArticles = async () => {
   try {
-    const response = await Axios.get("http://localhost:4000/blog/articles");
+    const response = await axios.get(`${URL}/blog/articles`);
     const result = await response.data;
     return { data: result };
   } catch (error) {
@@ -1049,7 +1050,7 @@ export const getArticles = async () => {
 
 export const getProducts = async () => {
   try {
-    const response = await Axios.get("http://localhost:4000/products");
+    const response = await axios.get(`${URL}/products`);
     const result = await response.data;
 
     return { data: result };
@@ -1060,7 +1061,7 @@ export const getProducts = async () => {
 
 export const getManagements = async () => {
   try {
-    const response = await Axios.get("http://localhost:4000/managements");
+    const response = await axios.get(`${URL}/managements`);
     const result = await response.data;
 
     return { data: result };
@@ -1069,15 +1070,156 @@ export const getManagements = async () => {
   }
 };
 
+//getDetail
+export const getArticleBySlug = async slug => {
+  try {
+    const response = await axios.get(`${URL}/blog/article/${slug}`);
+    const result = response.data;
+
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getProductBySlug = async slug => {
+  try {
+    const response = await axios.get(`${URL}/product/${slug}`);
+    const result = response.data;
+
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getManagementBySlug = async slug => {
+  try {
+    const response = await axios.get(`${URL}/management/${slug}`);
+    const result = response.data;
+
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //create
 
-export const createProduct = async ({ nameFix, imageFix, descFix }) => {
+export const createArticle = async formData => {
   try {
-    const response = await Axios.post("http://localhost:4000/product/create", {
-      data: { name: nameFix, image: imageFix, description: descFix },
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    console.log(response);
+    await axios
+      .post(`${URL}/blog/article/create`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(response => console.log(response.data))
+      .catch(error => console.log(error.response.message));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createProduct = async formData => {
+  try {
+    await axios
+      .post(`${URL}/product/create`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(response => response.data.message)
+      .then(data => console.log("Berhasil Upload: ", data))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createManagement = async formData => {
+  try {
+    await axios
+      .post(`${URL}/management/create`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error.response.message));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//update
+export const updateArticle = async ({ slug, formData }) => {
+  try {
+    await axios
+      .put(`${URL}/blog/article/update/${slug}`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(response => console.log("respon server: ", response.data))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const updateProduct = async ({ slug, formData }) => {
+  try {
+    await axios
+      .put(`${URL}/product/update/${slug}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateManagement = async ({ slug, formData }) => {
+  try {
+    await axios
+      .put(`${URL}/management/update/${slug}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//delete
+export const deleteArticle = async slug => {
+  try {
+    await axios
+      .delete(`${URL}/blog/article/delete/${slug}`)
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteProduct = async slug => {
+  try {
+    await axios
+      .delete(`${URL}/product/delete/${slug}`)
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteManagement = async slug => {
+  try {
+    await axios
+      .delete(`${URL}/management/delete/${slug}`)
+      .then(response => console.log(response.data.message))
+      .catch(error => console.log(error));
   } catch (error) {
     console.log(error);
   }

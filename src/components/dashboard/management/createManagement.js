@@ -1,78 +1,127 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import useInput from "@/hooks/useInput";
+import { createManagement } from "@/data";
+import { navigate, Link } from "gatsby";
 
-const CreateManagement = ({ CreateManagement }) => {
-  const [name, setName] = useInput();
-  const [image, setImage] = useInput();
-  const [position, setPosition] = useInput();
-  const [description, setDescription] = useInput();
-  const [facebook, setFacebook] = useInput();
-  const [twitter, setTwitter] = useInput();
-  const [linkedin, setLinkedin] = useInput();
+const CreateManagement = () => {
+  const [name, onNameChange] = useInput();
+  const [image, setImage] = useState();
+  const [position, onPositionChange] = useInput();
+  const [description, onDescriptionChange] = useInput();
+  const [facebook, onFacebookChange] = useInput();
+  const [twitter, onTwitterChange] = useInput();
+  const [linkedin, onLinkedinChange] = useInput();
 
-  const onNameChange = e => {
-    setName(e.target.value);
-  };
   const onImgChange = e => {
     setImage(e.target.files[0]);
   };
-  const onPositionChange = e => {
-    setPosition;
-  };
 
-  const onCreateProduct = async e => {
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("image", image);
+  formData.append("position", position);
+  formData.append("description", description);
+  formData.append("facebook", facebook);
+  formData.append("twitter", twitter);
+  formData.append("linkedin", linkedin);
+  const onCreateManagement = async e => {
     e.preventDefault();
-    const content = JSON.stringify(
-      convertToRaw(editorState.getCurrentContent())
-    );
-    const html = draftToHtml(JSON.parse(content));
-    const formData = new FormData();
-    formData.append("nama_produk", nama_produk);
-    formData.append("image", image);
-    formData.append("deskripsi_produk", html);
     try {
-      await createProduct({ formData });
-    } catch (e) {
-      console.log(e.message);
+      await createManagement(formData);
+    } catch (error) {
+      console.log(error);
     }
+
+    navigate("/dashboard/managements");
   };
 
   return (
     <>
+      <Link to="/dashboard/managements" className="btn btn-secondary mt-4">
+        <i className="bi bi-arrow-left"></i> &nbsp;Kembali
+      </Link>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 className="h1">Add Management</h1>
+        <h1 className="h1">Tambah Direksi</h1>
       </div>
       <Form
         className="mt-4"
         encType="multipart/form-data"
-        onSubmit={onCreateProduct}
+        onSubmit={onCreateManagement}
       >
         <Form.Group className="my-3">
-          <Form.Label>Nama Produk</Form.Label>
+          <Form.Label>Nama Direksi</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Masukkan Judul Product"
+            placeholder="Masukkan Nama Direksi"
             required
-            onChange={e => onTitleChange(e)}
-            value={nama_produk}
+            onChange={onNameChange}
+            value={name}
           />
         </Form.Group>
         <Form.Group className="my-3">
-          <Form.Label>Gambar Produk</Form.Label>
-          <input type="file" required onChange={e => onImgChange(e)} />
+          <Form.Label>Gambar Direksi</Form.Label>
+          <Form.Control
+            type="file"
+            accept="image"
+            name="image"
+            placeholder="Masukkan Image"
+            onChange={e => onImgChange(e)}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Jabatan Direksi</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Masukkan Jabatan Direksi"
+            value={position}
+            onChange={onPositionChange}
+            required
+          />
         </Form.Group>
         <Form.Group>
           <Form.Label>Deskripsi Direksi</Form.Label>
           <Form.Control
-            type="text"
+            as="textarea"
+            rows={3}
             placeholder="Masukkan Deskripsi Direksi"
+            value={description}
+            onChange={onDescriptionChange}
             required
           />
         </Form.Group>
+        <Form.Group>
+          <Form.Label>Social Media Direksi</Form.Label>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+            <Form.Control
+              placeholder="Facebook"
+              value={facebook}
+              onChange={onFacebookChange}
+              required
+            />
+            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+            <Form.Control
+              placeholder="Twitter"
+              value={twitter}
+              onChange={onTwitterChange}
+              required
+            />
+            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+            <Form.Control
+              placeholder="Linkedin"
+              value={linkedin}
+              onChange={onLinkedinChange}
+              required
+            />
+          </InputGroup>
+        </Form.Group>
+
         <Button type="submit" className="mt-3">
-          Submit
+          Tambah
         </Button>
       </Form>
     </>

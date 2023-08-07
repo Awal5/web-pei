@@ -1,22 +1,12 @@
 import React from "react";
-import { Col, Container, Image } from "react-bootstrap";
 import { Link } from "gatsby";
 
-import userIcon from "@/assets/feather-icon/user.svg";
-
-const DashboardSidebar = ({ username }) => {
+const DashboardSidebar = () => {
   return (
     <nav
       id="sidebarMenu"
       className="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse"
     >
-      <Container className="justify-content-center d-flex pt-4">
-        <Col xs={6} md={4} className="m-auto text-center">
-          <Image src={userIcon} roundedCircle className="p-3" />
-          {/* <p>{username}</p> */}
-        </Col>
-      </Container>
-
       <div className="position-sticky pt-3 sidebar-sticky">
         <ul className="nav flex-column">
           <li className="nav-item">
@@ -26,7 +16,7 @@ const DashboardSidebar = ({ username }) => {
               activeClassName="active"
               aria-current="page"
             >
-              <i className="bi bi-file-earmark-text"></i> Articles
+              <i className="bi bi-file-earmark-text"></i> Artikel
             </Link>
           </li>
           <li className="nav-item">
@@ -36,7 +26,7 @@ const DashboardSidebar = ({ username }) => {
               activeClassName="active"
               aria-current="page"
             >
-              <i className="bi bi-box"></i> Products
+              <i className="bi bi-box"></i> Produk
             </Link>
           </li>
           <li>
@@ -46,7 +36,7 @@ const DashboardSidebar = ({ username }) => {
               activeClassName="active"
               aria-current="page"
             >
-              <i className="bi bi-people-fill"></i> Managements
+              <i className="bi bi-people-fill"></i> Direksi
             </Link>
           </li>
         </ul>

@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-dashboard-managements-edit-[slug]-js",
+    "path": "/dashboard/managements/edit/[slug]/",
+    "result": {"pageContext":{"matchPath":"/dashboard/managements/edit/:slug"}},
+    "staticQueryHashes": [],
+    "matchPath": "/dashboard/managements/edit/:slug"}
