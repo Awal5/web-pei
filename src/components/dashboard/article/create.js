@@ -10,6 +10,7 @@ import useInput from "@/hooks/useInput";
 import { createArticle } from "@/data";
 import { navigate, Link } from "gatsby";
 import toolbar from "@/config/toolbar";
+import Toasted from "@/components/atoms/Toast";
 
 const CreateArticle = () => {
   const [title, onTitleChange] = useInput();
@@ -38,11 +39,12 @@ const CreateArticle = () => {
   const onSubmitHandler = async e => {
     e.preventDefault();
     try {
-      await createArticle(formData);
+      await createArticle(formData).then(() =>
+        Toasted("Artikel berhasil dibuat", "", "success")
+      );
     } catch (error) {
       console.log(error);
     }
-    console.log({ title, images, description });
     navigate("/dashboard/articles");
   };
 

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainManagement from "@/components/dashboard/management/main-management";
 import Dashboard from "..";
 import { getManagements, deleteManagement } from "@/data";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
-
+import Swal from "sweetalert2";
 const ManagementsPages = () => {
   const [management, setManagement] = useState([]);
   const [error, setError] = useState();
@@ -32,23 +30,29 @@ const ManagementsPages = () => {
       console.log(error);
     }
   }
+
   function confirmDelete(slug) {
-    confirmAlert({
-      title: "Delete Product",
-      message: "Apakah anda yakin ingin Management?",
-      buttons: [
-        {
-          label: "Cancel",
-        },
-        {
-          label: "Delete",
-          onClick: () => {
-            removeManagement(slug);
-          },
-        },
-      ],
+    Swal.fire({
+      title: "Konfirmasi Hapus !",
+      text: "Apakah anda yakin ingin menghapus Direksi ini ?",
+      showCancelButton: true,
+      confirmButtonColor: "#00bf06",
+      cancelButtonColor: "#f01202",
+      focusConfirm: false,
+      allowOutsideClick: false,
+      icon: "warning",
+      confirmButtonText: "Ya",
+      cancelButtonText: "Batal",
+    }).then(result => {
+      if (result.isConfirmed) {
+        removeManagement(slug);
+        Swal.fire("Dihapus", "", "success");
+      } else if (result.isDismissed) {
+        Swal.fire("Dibatalkan", "", "error");
+      }
     });
   }
+
   return (
     <Dashboard>
       <MainManagement

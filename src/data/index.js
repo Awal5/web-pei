@@ -1196,7 +1196,7 @@ export const deleteArticle = async slug => {
   try {
     await axios
       .delete(`${URL}/blog/article/delete/${slug}`)
-      .then(response => console.log(response.data.message))
+
       .catch(error => console.log(error));
   } catch (error) {
     console.log(error);

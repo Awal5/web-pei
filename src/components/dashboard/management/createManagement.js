@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import useInput from "@/hooks/useInput";
 import { createManagement } from "@/data";
 import { navigate, Link } from "gatsby";
+import Toasted from "@/components/atoms/Toast";
 
 const CreateManagement = () => {
   const [name, onNameChange] = useInput();
@@ -30,7 +31,9 @@ const CreateManagement = () => {
   const onCreateManagement = async e => {
     e.preventDefault();
     try {
-      await createManagement(formData);
+      await createManagement(formData).then(() =>
+        Toasted("Direksi Berhasil Ditambahkan", "", "success")
+      );
     } catch (error) {
       console.log(error);
     }

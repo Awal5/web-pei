@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainProduct from "@/components/dashboard/product/main-product";
 import Dashboard from "..";
 import { getProducts, deleteProduct } from "@/data";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+import Swal from "sweetalert2";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
@@ -35,20 +34,24 @@ const Product = () => {
   }
 
   function confirmDelete(slug) {
-    confirmAlert({
-      title: "Delete Product",
-      message: "Apakah anda yakin ingin menghapus?",
-      buttons: [
-        {
-          label: "Cancel",
-        },
-        {
-          label: "Delete",
-          onClick: () => {
-            removeProduct(slug);
-          },
-        },
-      ],
+    Swal.fire({
+      title: "Konfirmasi Hapus !",
+      text: "Apakah anda yakin ingin menghapus Produk ini ?",
+      showCancelButton: true,
+      confirmButtonColor: "#00bf06",
+      cancelButtonColor: "#f01202",
+      focusConfirm: false,
+      allowOutsideClick: false,
+      icon: "warning",
+      confirmButtonText: "Ya",
+      cancelButtonText: "Batal",
+    }).then(result => {
+      if (result.isConfirmed) {
+        removeProduct(slug);
+        Swal.fire("Dihapus", "", "success");
+      } else if (result.isDismissed) {
+        Swal.fire("Dibatalkan", "", "error");
+      }
     });
   }
 

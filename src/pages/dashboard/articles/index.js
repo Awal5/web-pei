@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainArticle from "@/components/dashboard/article/main-article";
 import Dashboard from "..";
 import { getArticles, deleteArticle } from "@/data";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+import Swal from "sweetalert2";
 
 const ArticlesPages = () => {
   const [article, setArticle] = useState([]);
@@ -29,28 +28,31 @@ const ArticlesPages = () => {
 
   async function removeArticle(slug) {
     try {
-      await deleteArticle(slug).then(() => getArticle());
+      Swal.fire({
+        title: "Konfirmasi Hapus !",
+        text: "Apakah anda yakin ingin menghapus Artikel ini ?",
+        showCancelButton: true,
+        confirmButtonColor: "#00bf06",
+        cancelButtonColor: "#f01202",
+        focusConfirm: false,
+        allowOutsideClick: false,
+        icon: "warning",
+        confirmButtonText: "Ya",
+        cancelButtonText: "Batal",
+      }).then(result => {
+        if (result.isConfirmed) {
+          deleteArticle(slug)
+            .then(() => {
+              Swal.fire("Artikel Dihapus", "", "success");
+            })
+            .then(() => getArticle());
+        } else if (result.isDismissed) {
+          Swal.fire("Dibatalkan", "", "error");
+        }
+      });
     } catch (error) {
       console.log(error);
     }
-  }
-
-  function confirmDelete(slug) {
-    confirmAlert({
-      title: "Delete Article",
-      message: "Apakah anda yakin ingin menghapus?",
-      buttons: [
-        {
-          label: "Cancel",
-        },
-        {
-          label: "Delete",
-          onClick: () => {
-            removeArticle(slug);
-          },
-        },
-      ],
-    });
   }
 
   return (
@@ -59,7 +61,7 @@ const ArticlesPages = () => {
         articles={article}
         errors={error}
         loading={loading}
-        onDelete={confirmDelete}
+        onDelete={removeArticle}
       />
     </Dashboard>
   );

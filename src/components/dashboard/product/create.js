@@ -10,7 +10,7 @@ import { navigate, Link } from "gatsby";
 import { createProduct } from "@/data";
 import useInput from "@/hooks/useInput";
 import toolbar from "@/config/toolbar";
-import "react-toastify/dist/ReactToastify.css";
+import Toasted from "@/components/atoms/Toast";
 
 const CreateProduct = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -36,8 +36,9 @@ const CreateProduct = () => {
     e.preventDefault();
 
     try {
-      await createProduct(formData);
-      await toast.success("Success Create Data", { position: "top-right" });
+      await createProduct(formData).then(() =>
+        Toasted("Produk Berhasil Ditambahkan", "", "success")
+      );
     } catch (error) {
       console.log(error);
     }

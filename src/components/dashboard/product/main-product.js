@@ -1,12 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { showFormattedDate } from "@/data";
 import { Link } from "gatsby";
 import { Button } from "react-bootstrap";
 import Loading from "@/components/atoms/Loading";
 import EmptyState from "@/components/atoms/emptyState";
+import Search from "../Search";
+import Sorting from "../Sorting";
+import Filter from "../Filter";
 
 const MainProduct = props => {
   const { products, errors, onDelete, loading } = props;
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
+  const [filter, setFilter] = useState("");
+
+  const onFilterHandler = filter => {
+    setFilter(filter);
+  };
+
+  const onSortHandler = sort => {
+    setSort(sort);
+  };
+
+  const onSearchHandler = search => {
+    setSearch(search);
+  };
+
+  const sortedProduct = products.sort((a, b) => {
+    if (sort === "ASC" && filter === "date") {
+      return new Date(a.createdAt) - new Date(b.createdAt);
+    } else if (sort === "DESC" && filter === "date") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    } else if (sort === "ASC" && filter === "title") {
+      return a.name.localeCompare(b.name);
+    } else if (sort === "DESC" && filter === "title") {
+      return b.name.localeCompare(a.name);
+    } else {
+      return products;
+    }
+  });
+
+  const searchProduct = sortedProduct.filter(product => {
+    if (!search) {
+      return products;
+    }
+    return product.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   if (loading) {
     return <Loading />;
@@ -26,9 +65,20 @@ const MainProduct = props => {
         <h1 className="h2">Produk</h1>
       </div>
       <div className="table-responsive">
-        <Link className="btn btn-success mb-3" to="/dashboard/products/create">
-          Tambahkan Produk +
-        </Link>
+        <div className="d-flex justify-content-between">
+          <Link
+            className="btn btn-success mb-3"
+            to="/dashboard/products/create"
+          >
+            Tambahkan Produk +
+          </Link>
+          <div className="w-50 d-flex justify-content-end gap-2">
+            <Filter filter={filter} onFilterHandler={onFilterHandler} />
+            <Sorting sort={sort} onSortHandler={onSortHandler} />
+            <Search search={search} onSearchHandler={onSearchHandler} />
+          </div>
+        </div>
+
         <table className="table table-striped table-sm text-center">
           <thead>
             <tr>
@@ -39,7 +89,7 @@ const MainProduct = props => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => {
+            {searchProduct.map((product, index) => {
               return (
                 <tr key={product.id}>
                   <td>{index + 1}</td>

@@ -10,8 +10,6 @@ import "bootstrap/dist/js/bootstrap";
 import LayoutDashboard from "@/components/dashboard/layout";
 import Header from "@/components/dashboard/header";
 import Sidebar from "@/components/dashboard/sidebar";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 
 const Dashboard = ({ children }) => {
   const [username, setUsername] = useState("");
@@ -25,7 +23,6 @@ const Dashboard = ({ children }) => {
   const refreshToken = async () => {
     try {
       const response = await Axios.get("http://localhost:4000/auth/token");
-      console.log(response);
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setUsername(decoded.username);
@@ -81,7 +78,6 @@ const Dashboard = ({ children }) => {
           <Sidebar username={username} />
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             {children}
-            <ToastContainer position="top-right"></ToastContainer>
           </main>
         </div>
       </div>

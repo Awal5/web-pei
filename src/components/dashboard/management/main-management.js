@@ -1,12 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { showFormattedDate } from "@/data";
 import { Link } from "gatsby";
 import { Image, Button } from "react-bootstrap";
 import Loading from "@/components/atoms/Loading";
 import EmptyState from "@/components/atoms/EmptyState";
+import Search from "../Search";
+import Sorting from "../Sorting";
+import Filter from "../Filter";
+import { Form } from "react-bootstrap";
 
 const MainManagement = props => {
   const { managements, errors, onDelete, loading } = props;
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
+  const [filter, setFilter] = useState("");
+
+  const onFilterHandler = filter => {
+    setFilter(filter);
+  };
+
+  const onSortHandler = sort => {
+    setSort(sort);
+  };
+
+  const onSearchHandler = search => {
+    setSearch(search);
+  };
+
+  const sortedManagement = managements.sort((a, b) => {
+    if (sort === "ASC" && filter === "date") {
+      return new Date(a.createdAt) - new Date(b.createdAt);
+    } else if (sort === "DESC" && filter === "date") {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    } else if (sort === "ASC" && filter === "title") {
+      return a.name.localeCompare(b.name);
+    } else if (sort === "DESC" && filter === "title") {
+      return b.name.localeCompare(a.name);
+    } else {
+      return managements;
+    }
+  });
+
+  const searchManagement = sortedManagement.filter(management => {
+    if (!search) {
+      return managements;
+    }
+    return management.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   if (loading) {
     return <Loading />;
@@ -26,12 +66,20 @@ const MainManagement = props => {
       </div>
 
       <div className="table-responsive">
-        <Link
-          className="btn btn-success mb-3"
-          to="/dashboard/managements/create"
-        >
-          Tambah Direksi
-        </Link>
+        <div className="d-flex justify-content-between">
+          <Link
+            className="btn btn-success mb-3"
+            to="/dashboard/managements/create"
+          >
+            Tambah Direksi
+          </Link>
+
+          <div className="w-50 d-flex justify-content-end gap-2">
+            <Filter filter={filter} onFilterHandler={onFilterHandler} />
+            <Sorting sort={sort} onSortHandler={onSortHandler} />
+            <Search search={search} onSearchHandler={onSearchHandler} />
+          </div>
+        </div>
 
         <table className="table table-striped table-sm text-center">
           <thead>
@@ -45,7 +93,7 @@ const MainManagement = props => {
             </tr>
           </thead>
           <tbody>
-            {managements.map((management, index) => {
+            {searchManagement.map((management, index) => {
               return (
                 <tr key={management.id}>
                   <td>{index + 1}</td>
