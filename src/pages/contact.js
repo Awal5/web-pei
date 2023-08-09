@@ -3,7 +3,6 @@ import Footer from "@/components/footer";
 import Layout from "@/components/layout";
 import ContactInfos from "@/components/contact/contact-infos";
 import GoogleMap from "@/components/google-map";
-import ContactForm from "@/components/contact/contact-form";
 import PageBanner from "@/components/page-banner";
 import SearchContextProvider from "@/context/search-context";
 import MenuContextProvider from "@/context/menu-context";
@@ -12,12 +11,11 @@ const ContactPage = () => {
   return (
     <MenuContextProvider>
       <SearchContextProvider>
-        <Layout PageTitle="Contact Page">
+        <Layout PageTitle="Kontak">
           <HeaderOne />
-          <PageBanner title="Contact Us" name="Contact" />
-          <ContactForm />
-          <GoogleMap extraClass="contact-page" />
+          <PageBanner title="Hubungi Kami" name="Kontak" />
           <ContactInfos />
+          <GoogleMap extraClass="contact-page" />
           <Footer />
         </Layout>
       </SearchContextProvider>

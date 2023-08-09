@@ -72,7 +72,7 @@ const ContactForm = () => {
                 type="submit"
                 id="con_submit"
               >
-                <span>Send Message</span>
+                <span>Kirim Pesan</span>
               </button>
             </form>
           </div>

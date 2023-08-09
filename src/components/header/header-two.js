@@ -35,7 +35,7 @@ const HeaderTwo = () => {
 
   return (
     <header
-      className={`header_01 black_color ${
+      className={`header_01 orange_color ${
         true === sticky ? "fixedHeader animated flipInX" : null
       }`}
       id="header"

@@ -5,22 +5,22 @@ import Paginations from "@/components/paginations";
 import { BlogData } from "@/data";
 import BlogCard from "@/components/blog/blog-card";
 
-const BlogThree = () => {
+const BlogThree = ({ articles, loading }) => {
   return (
     <section className="commonSection blogPage">
       <Container>
         <Row>
           <Col lg={8} sm={8}>
             <Row>
-              {BlogData.map((post, index) => (
-                <Col lg={6} sm={12} md={6} key={index}>
-                  <BlogCard data={post} />
+              {articles.map(article => (
+                <Col lg={8} sm={12} md={6} key={article.id}>
+                  <BlogCard data={article} />
                 </Col>
               ))}
             </Row>
             <Paginations />
           </Col>
-          <Col lg={4} sm={4} className="sidebar">
+          <Col lg={4} sm={4}>
             <BlogSidebar />
           </Col>
         </Row>

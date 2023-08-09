@@ -182,6 +182,9 @@ License URI:
 .black_color {
   border-color: #e5e5e5;
 }
+.orange_color {
+  border-color: #f87219ff;
+}
 .black_color .mainmenu ul li a {
   color: #000000;
 }
@@ -199,7 +202,7 @@ License URI:
   color: #fd632f !important;
 }
 .fixedHeader {
-  background: #000;
+  background: #f87219ff;
   left: 0;
   position: fixed;
   right: 0;
@@ -1279,7 +1282,7 @@ License URI:
 .footer_1 {
   position: relative;
   padding: 130px 0 0;
-  background: url(../images/bg/5.jpg) no-repeat center center / cover;
+  background-color: #f87219ff;
 }
 .footer_1 .widget {
   position: relative;
@@ -1306,7 +1309,7 @@ License URI:
 .footer_1 .aboutwidget p {
   font-size: 14px;
   letter-spacing: 0.56px;
-  color: #aaaaaa;
+  color: #ffffff;
   margin: 0;
 }
 .footer_1 .contact_widgets {
@@ -1315,16 +1318,16 @@ License URI:
 .footer_1 .contact_widgets p {
   font-size: 14px;
   letter-spacing: 0.56px;
-  color: #aaaaaa;
+  color: #ffffff;
   margin: 0;
 }
 .footer_1 .copyright a,
 .footer_1 .contact_widgets p a {
-  color: #aaaaaa;
+  color: #ffffff;
 }
 .footer_1 .copyright a:hover,
 .footer_1 .contact_widgets p a:hover {
-  color: #fd632f !important;
+  color: black !important;
 }
 .footer_1 .contact_widgets p:first-of-type {
   margin-bottom: 32px;
@@ -1342,7 +1345,7 @@ License URI:
 .footer_1 .social_widget ul li a {
   font-size: 14px;
   letter-spacing: 0.56px;
-  color: #aaaaaa;
+  color: #ffffff;
   margin: 0;
   display: block;
   text-align: left;
@@ -1359,7 +1362,7 @@ License URI:
   border-top: 1px solid #1a1a1a;
   font-size: 14px;
   line-height: 0.8;
-  color: #aaaaaa;
+  color: #ffffff;
   text-transform: uppercase;
   padding: 41px 0;
 }
@@ -1854,7 +1857,7 @@ License URI:
 .pageBanner {
   position: relative;
   min-height: 465px;
-  background: url(../images/bg/8.jpg) no-repeat center center / cover;
+  background: url(../images/bg/contact.jpg) no-repeat center center / cover;
   padding-top: 224px;
 }
 .banner_content {

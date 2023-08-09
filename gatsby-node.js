@@ -23,22 +23,3 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   });
 };
-
-// exports.createPagesStatefully = async ({ actions }) => {
-//   const { createPage } = actions;
-
-//   // Mengambil data dari API menggunakan Axios
-//   const response = await axios.get("http://localhost:4000/products");
-//   const products = response.data;
-
-//   // Membuat halaman detail untuk setiap post
-//   products.forEach(product => {
-//     createPage({
-//       path: `/dashboard/products/${product.slug}`,
-//       component: path.resolve("./src/pages/dashboard/products/detail.js"), // Ganti dengan path template Anda
-//       context: {
-//         product,
-//       },
-//     });
-//   });
-// };

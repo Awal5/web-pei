@@ -172,66 +172,77 @@ export const SliderThreeData = [
 ];
 
 export const ContactInfosBlock = {
-  subTitle: "our offices",
-  title: "offices near you",
-  description:
-    "We are committed to providing our customers with exceptional service while \n offering our employees the best training.",
+  title: "Hubungi Kami",
+  description: "Hubungi Kami untuk bekerja sama, Alamat dan Kontak Tertera.",
 };
 
 export const ContactInfosList = [
   {
-    title: "austin",
+    title: "Alamat",
     infos: [
       {
-        name: "22 Texas West Hills",
+        name: "Jl. Jend Gatot Subroto No. 517, Kota Bandung (40285)",
       },
       {
-        name: "needhelp@meipaly.com",
+        name: "Jl. Batu Ceper No. 28, Jakarta (10120)",
       },
       {
-        name: "666 888 000",
+        name: "Jl. Bromo No. 5, Turen, Kab. Malang (65175)",
       },
     ],
   },
   {
-    title: "boston",
+    title: "Telepon",
     infos: [
       {
-        name: "5 Federal Street Boston",
+        name: "022 – 730 8158, 731 2073 Ext. 2322",
       },
       {
-        name: "needhelp@meipaly.com",
+        name: "021 – 380 6929",
       },
       {
-        name: "666 888 000",
+        name: "0341 – 814 500",
       },
     ],
   },
   {
-    title: "new york",
+    title: "Fax",
     infos: [
       {
-        name: "8th Broklyn New York",
+        name: "022 – 7321077",
       },
       {
-        name: "needhelp@meipaly.com",
-      },
-      {
-        name: "666 888 000",
+        name: "021 – 3814039",
       },
     ],
   },
   {
-    title: "baltimore",
+    title: "Media Social",
     infos: [
       {
-        name: "3 Lombabr 50 baltimore",
+        name: "Instagram :",
+        title: " @pindad_enjiniringid",
+        link: "https://www.instagram.com/pindad_enjiniringid/",
       },
       {
-        name: "needhelp@meipaly.com",
+        name: "Facebook :",
+        title: "@Pindadenjid",
+        link:
+          "https://www.facebook.com/PT-Pindad-Enjiniring-Indonesia-387084261834874/",
       },
       {
-        name: "666 888 000",
+        name: "Twitter :",
+        title: "@PT Pindad Enjiniring Indonesia",
+        link: "https://twitter.com/pindadenjind",
+      },
+    ],
+  },
+  {
+    title: "Email",
+    infos: [
+      {
+        name: "setper@pindad-enjiniring.com",
+        link: "mailto:setper@pindad-enjiniring.com",
       },
     ],
   },
@@ -1234,5 +1245,14 @@ const showFormattedDate = date => {
   };
   return new Date(date).toLocaleDateString("id-ID", options);
 };
+const showFormattedDate2 = date => {
+  const options = {
+  
+   
+    month: "long",
+    day: "numeric",
+  };
+  return new Date(date).toLocaleDateString("id-ID", options);
+};
 
-export { showFormattedDate };
+export { showFormattedDate, showFormattedDate2 };

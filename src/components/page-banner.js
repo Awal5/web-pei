@@ -15,6 +15,7 @@ const PageBanner = ({ title, name }) => {
           </div>
         </div>
       </div>
+      d
     </section>
   );
 };
