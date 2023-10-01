@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-dashboard-managements-[slug]-js",
+    "componentChunkName": "component---src-pages-dashboard-managements-[slug]-jsx",
     "path": "/dashboard/managements/[slug]/",
     "result": {"pageContext":{"matchPath":"/dashboard/managements/:slug"}},
     "staticQueryHashes": [],

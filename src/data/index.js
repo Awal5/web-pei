@@ -1,91 +1,67 @@
 import logoLight from "@/images/logo.png";
-import logoDark from "@/images/logo2.png";
 
 export const LogoImage = {
   light: logoLight,
-  dark: logoDark,
 };
 
 export const NavLinks = [
   {
-    name: "Home",
+    name: "Beranda",
     url: "/",
+  },
+  {
+    name: "Perusahaan",
+    url: "/tentang",
     subItems: [
       {
-        name: "Home 01",
-        url: "/",
+        name: "Tentang Perusahaan",
+        url: "/tentang-perusahaan",
       },
       {
-        name: "Home 02",
-        url: "/index-2",
+        name: "Manajemen",
+        url: "/manajemen",
       },
       {
-        name: "Home 03",
-        url: "/index-3",
+        name: "PT Pindad",
+        url: "https://pindad.com/",
+      },
+
+      {
+        name: "PT Pindad International Logistic (PT PIL)",
+        url: "https://pindadinternationallogistic.co.id/",
+      },
+      {
+        name: "PT Pindad Global Source & Trading (PT PGST)",
+        url: "https://pindadglobal.com/",
+      },
+      {
+        name: "PT Pindad Medika Utama (PT PMU)",
+        url: "https://pindadmedika.com/",
+      },
+
+      {
+        name: "Peraturan & Ketentuan Perusahaan",
+        url: "/peraturan",
+      },
+      {
+        name: "Sistem Manajemen Mutu & Komitmen Terhadap Lingkungan",
+        url: "/sistem-manajemen",
       },
     ],
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Berita",
+    url: "/news",
   },
+
   {
-    name: "Services",
-    url: "/service",
-    subItems: [
-      {
-        name: "Services",
-        url: "/service",
-      },
-      {
-        name: "Service Details",
-        url: "/service-details",
-      },
-    ],
+    name: "Produk",
+    url: "/products",
   },
+
   {
-    name: "Portfolio",
-    url: "/portfolio",
-    subItems: [
-      {
-        name: "Portfolio 01",
-        url: "/portfolio",
-      },
-      {
-        name: "Portfolio Details",
-        url: "/portfolio-details",
-      },
-    ],
-  },
-  {
-    name: "Blog",
-    url: "/blog",
-    subItems: [
-      {
-        name: "Blog 01",
-        url: "/blog",
-      },
-      {
-        name: "Blog 02",
-        url: "/blog-2",
-      },
-      {
-        name: "Blog 03",
-        url: "/blog-3",
-      },
-      {
-        name: "Blog Details",
-        url: "/blog-single",
-      },
-    ],
-  },
-  {
-    name: "Contact",
+    name: "Kontak",
     url: "/contact",
-  },
-  {
-    name: "Login",
-    url: "/login",
   },
 ];
 
@@ -113,61 +89,104 @@ export const SliderOneData = [
   },
 ];
 
-import sliderTwo01 from "@/images/slider/2_1.jpg";
-import sliderTwo02 from "@/images/slider/2_2.jpg";
-import sliderTwo03 from "@/images/slider/2_3.jpg";
+import AboutCompany1 from "@/images/slider/3.jpg";
+import AboutCompany2 from "@/images/slider/2.jpg";
+import AboutCompany3 from "@/images/slider/6.jpg";
+import AboutCompany4 from "@/images/slider/4.jpeg";
+
+export const AboutCompanyImage = [
+  {
+    name: "image1",
+    image: AboutCompany1,
+  },
+  {
+    name: "image2",
+    image: AboutCompany2,
+  },
+  {
+    name: "image3",
+    image: AboutCompany3,
+  },
+  {
+    name: "image4",
+    image: AboutCompany4,
+  },
+];
+
+import sliderTwo01 from "@/images/slider/1.jpg";
+import sliderTwo02 from "@/images/slider/2.jpg";
+import sliderTwo03 from "@/images/slider/3.jpg";
+import sliderTwo04 from "@/images/slider/4.jpeg";
+import sliderTwo05 from "@/images/slider/5.jpg";
 
 export const SliderTwoData = [
   {
     image: sliderTwo01,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "DIGITAL\nMARKETING\nAGENCY.",
-    button: {
-      label: "DISCOVER MORE",
-      url: "/about",
-    },
+
+    title: "Selamat Datang di PT. Pindad Enjiniring Indonesia.",
   },
   {
     image: sliderTwo02,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "DIGITAL\nMARKETING\nAGENCY.",
-    button: {
-      label: "DISCOVER MORE",
-      url: "/about",
-    },
+    subTitle:
+      "Berkontribusi penuh serta mengembangkan bisnis untuk\nmenghasilkan produk dan jasa berkualitas tinggi",
+    title: "Peran aktif dalam optimalisasi pengembangan bisnis",
   },
   {
     image: sliderTwo03,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "DIGITAL\nMARKETING\nAGENCY.",
-    button: {
-      label: "DISCOVER MORE",
-      url: "/about",
-    },
+    subTitle:
+      "Integritas, Professional, Cepat Tanggap, Kerja Cerdas,\nKreativitas,Berpengetahuan dan Inovatif, serta Pantang\nMeneyerah",
+    title: "Petarung",
+  },
+  {
+    image: sliderTwo04,
+    subTitle:
+      "Optimis dalam upaya proses bisnis yang\ndijalankan untuk selalu mencapai target",
+    title: "Pemenang",
+  },
+  {
+    image: sliderTwo05,
+    subTitle:
+      "Kerja sama tim dalam satu tekad yang\ntercermin dalam pemahaman konsepsional,\n toleransi, dan solidaritas",
+    title: "Kompak",
   },
 ];
 
-import sliderThree01 from "@/images/slider/3_1.jpg";
-import sliderThree02 from "@/images/slider/3_2.jpg";
+// import sliderThree01 from "@/images/slider/3_1.jpg";
+// import sliderThree02 from "@/images/slider/3_2.jpg";
 
-export const SliderThreeData = [
+// export const SliderThreeData = [
+//   {
+//     image: sliderThree01,
+//     subTitle: "WELCOME TO MEIPALY AGENCY",
+//     title: "SMART WEB\n DESIGN AGENCY.",
+//     button: {
+//       label: "DISCOVER MORE",
+//       url: "/about",
+//     },
+//   },
+//   {
+//     image: sliderThree02,
+//     subTitle: "WELCOME TO MEIPALY AGENCY",
+//     title: "SMART WEB\n DESIGN AGENCY.",
+//     button: {
+//       label: "DISCOVER MORE",
+//       url: "/about",
+//     },
+//   },
+// ];
+
+export const CompanyName = [
   {
-    image: sliderThree01,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "SMART WEB\n DESIGN AGENCY.",
-    button: {
-      label: "DISCOVER MORE",
-      url: "/about",
-    },
+    name: "PT Daun Cakra Bhakti",
+    date: "7 Oktober 1992",
   },
   {
-    image: sliderThree02,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "SMART WEB\n DESIGN AGENCY.",
-    button: {
-      label: "DISCOVER MORE",
-      url: "/about",
-    },
+    name: "PT Cakra Mandiri Pratama",
+    date: "31 Desember 1999",
+  },
+  {
+    name: "PT Pindad Enjiniring Indonesia",
+    date: "4 Desember 2015 - Sekarang",
   },
 ];
 
@@ -181,13 +200,19 @@ export const ContactInfosList = [
     title: "Alamat",
     infos: [
       {
-        name: "Jl. Jend Gatot Subroto No. 517, Kota Bandung (40285)",
+        name: "Jl. Gatot Subroto, No.517, Bandung, Indonesia, 40285.",
+        location: "Kantor Pusat",
+        telp: "+62 22 730 8158, 731 2073 (Ext. 2322)",
       },
       {
-        name: "Jl. Batu Ceper No. 28, Jakarta (10120)",
+        name: "Jl. Bromo No.5, Turen, Malang, Indonesia, 65175",
+        location: "Kantor Cabang (PEI Bisnis Turen)",
+        telp: "+62 341 814500",
       },
       {
-        name: "Jl. Bromo No. 5, Turen, Kab. Malang (65175)",
+        name: "Jl. Batu Ceper No. 28, Jakarta 10120",
+        location: "Kantor Perwakilan Jakarta",
+        telp: "62 21 3806929",
       },
     ],
   },
@@ -195,13 +220,13 @@ export const ContactInfosList = [
     title: "Telepon",
     infos: [
       {
-        name: "022 – 730 8158, 731 2073 Ext. 2322",
+        name: "+62 22 730 8158, 731 2073 (Ext. 2322) ",
       },
       {
-        name: "021 – 380 6929",
+        name: "+62 341 814500",
       },
       {
-        name: "0341 – 814 500",
+        name: "62 21 3806929 ",
       },
     ],
   },
@@ -255,702 +280,244 @@ export const ContactFormTitle = {
     "We are committed to providing our customers with exceptional service while \n      offering our employees the best training. ",
 };
 
-import blogImage1 from "@/images/blog/IMG_6054-scaled-2500x1707.jpg";
-import blogImage2 from "@/images/blog/DSC02440-scaled-2500x1440.jpg";
-import blogImage3 from "@/images/blog/DSC02169-scaled-2500x1440.jpg";
-import blogImage4 from "@/images/blog/4.jpg";
-import blogImage5 from "@/images/blog/5.jpg";
-import blogImage6 from "@/images/blog/6.jpg";
-
-export const BlogData = [
+export const InformationChannel = [
   {
-    title: "SAMBUT RAMADHAN, PT PEI GELAR TRADISI MUNGGAHAN KARYAWAN",
-    date: "17 Mar",
-    url: "/blog-single",
-    image: blogImage1,
+    name: "Website Resmi",
+    title: "www.pindad-enjiniring.com",
+    link: "https://pindad-enjiniring.com",
   },
   {
-    title: "PEI GROUP JUARA 1 RISING STAR DEFEND ID DALAM HUT DEFEND ID KE – 1",
-    date: "13 Mar",
-    url: "/blog-single",
-    image: blogImage2,
+    name: "Instagram",
+    title: "pindad_enjiniringid",
+    link: "https://www.instagram.com/pindad_enjiniringid/",
   },
   {
-    title: "PEI GROUP IKUTI DEFEND ID CUP 2023",
-    date: "4 Mar",
-    url: "/blog-single",
-    image: blogImage3,
+    name: "Youtube",
+    title: "PT Pindad Enjiniring Indonesia",
+    link: "https://www.youtube.com/channel/UCLLK6bU3H0tISVxanoCXorA",
   },
   {
-    title: "a deep understanding of our audience",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage4,
-  },
-  {
-    title: "We build and activate brands insight",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage5,
-  },
-  {
-    title: "experiences that connect with people",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage6,
+    name: "Email",
+    title: "setper@pindad-enjiniring.com",
+    link: "mailto:setper@pindad-enjiniring.com",
   },
 ];
 
-import blogImageTwo1 from "@/images/blog/14.jpg";
-import blogImageTwo2 from "@/images/blog/15.jpg";
+import ptPindad from "@/images/about/Pindad.png";
+import PtPil from "@/images/about/PT-PIL-SKEP.png";
+import PtPgst from "@/images/about/PT-PGST-SKEP.png";
+import PtMedika from "@/images/about/PMU-new1.png";
 
-export const BlogTwoData = [
+export const MotherCompany = {
+  image: ptPindad,
+  name: "PT Pindad (Persero)",
+  social: [
+    {
+      title: "Website",
+      name: "www.pindad.com",
+      url: "https://www.pindad.com",
+    },
+    {
+      title: "Instagram",
+      name: "pt_pindad",
+      url: "https://www.instagram.com/pt_pindad/",
+    },
+    {
+      title: "Youtube",
+      name: "PT PINDAD (PERSERO) OFFICIAL",
+      url: "https://www.youtube.com/channel/UCLqhC4mRKpK30xDSJhnt0FA",
+    },
+    {
+      title: "Email",
+      name: "info@pindad.com",
+      url: "mailto:info@pindad.com",
+    },
+  ],
+};
+
+export const ChildCompany = [
   {
-    title:
-      "Dynamically procrastinate unique vortals with global best practices.",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImageTwo1,
+    name: "PT Pindad International Logistic (PT PIL)",
+    image: PtPil,
+    social: [
+      {
+        title: "Website",
+        name: "https://pindadinternationallogistic.co.id/",
+        url: "https://pindadinternationallogistic.co.id/",
+      },
+      {
+        title: "Instagram",
+        name: "pindadinternationallogistic",
+        url: "https://www.instagram.com/pindadinternationallogistic/",
+      },
+      {
+        title: "Email",
+        name: "ptpindadinternationallogistic@gmail.com",
+        url: "mailto:ptpindadinternationallogistic@gmail.com",
+      },
+    ],
   },
   {
-    title: "Become the best sale marketer",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage2,
+    name: "PT Pindad Global Source & Trading (PT PGST)",
+    image: PtPgst,
+    social: [
+      {
+        title: "Website",
+        name: "www.pindadglobal.com",
+        url: "https://www.pindadglobal.com",
+      },
+      {
+        title: "Instagram",
+        name: "pt_pindadglobal",
+        url: "https://www.instagram.com/pt_pindadglobal/",
+      },
+      {
+        title: "Email",
+        name: "info@pindadglobal.com",
+        url: "mailto:info@pindadglobal.com",
+      },
+    ],
   },
   {
-    title: "Introducing latest mopaly features",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage3,
+    name: "PT Pindad Medika Utama (PT PMU) / RSU Pindad",
+    image: PtMedika,
+    social: [
+      {
+        title: "Website",
+        name: "www.rsupindad.com",
+        url: "https://www.rsupindad.com",
+      },
+      {
+        title: "Instagram",
+        name: "rspindad",
+        url: "https://www.instagram.com/rspindad/",
+      },
+      {
+        title: "Email",
+        name: "admin.sesper@pindadmedika.com",
+        url: "mailto:admin.sesper@pindadmedika.com",
+      },
+    ],
+  },
+];
+
+export const VisionMissionData = [
+  {
+    title: "Visi",
+    desc:
+      "Menjadi Perusahaan yang profesional di bidang bisnis yang dijalankan dan memiliki kondisi finansial yang sehat.",
   },
   {
-    title: "a deep understanding of our audience",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage4,
+    title: "Misi",
+    desc:
+      "Melakukan kontribusi penuh dalam mencapai tujuan pengembangan bisnis, disamping sebagai komplemen dari aktivitas bisnis yang dilakukan oleh PT Pindad, Berupaya menghasilkan produk dan jasa yang berkualitas guna memberikan nilai-nilai terbaik bagi kebutuhan Pelanggan, Selalu berusaha mencapai kondisi finansial yang sehat, dan Meningkatkan kemampuan (Knowledge, Skill, Attitude) sumber daya manusia pada bidang bisnis yang dijalankan secara profesional, melalui upaya :",
+    subs: [
+      "Membangun serta meningkatkan SDM, Bisnis dan Kemitraan Usaha secara professional.",
+      "Peran aktif sebagai komplemen bisnis Induk Perusahaan (PT Pindad).",
+      "Inovasi Produksi dan Jasa.",
+      "Optimalisasi pengembangan bisnis Perusahaan.",
+    ],
+  },
+];
+
+export const CompanyCultureData = [
+  {
+    title: "Petarung",
+    subs: [
+      "Integritas",
+      "Profesional",
+      "Cepat Tanggap",
+      "Kerja Cerdas",
+      "Kreatifitas",
+      "Berpengetahuan dan Inovatif",
+      "Pantang Menyerah",
+    ],
   },
   {
-    title: "We build and activate brands insight",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage5,
+    title: "Pemenang",
+    desc:
+      "Optimis, percaya diri dan yakin dalam segala upaya pencapaian norma-norma yang telah ditargetkan. Output dari proses bisnis yang dijalankan oleh Perusahaan untuk selalu mencapai target.",
   },
   {
-    title:
-      "Holisticly conceptualize backend scenarios via accurate technologies.",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImageTwo2,
+    title: "Kompak",
+    desc:
+      "Kesamaan persepsi serta solidaritas Kerjasama tim dalam satu tekad tercapainya target Perusahaan, Bersatu padu dalam menanggapi atau menghadapi suatu perkara dan sebagainya yang tercermin dalam tindakan :",
+    subs: [
+      "Pemahaman konsepsional",
+      "Pemahaman konsepsional",
+      "Semangat",
+      "Pemahaman konsepsional",
+    ],
+  },
+];
+
+export const FieldDevelopmentData = [
+  {
+    title: " PRODUKSI/MANUFAKTUR",
+    desc:
+      "PT. Pindad Enjiniring Indonesia adalah satu-satunya anak perusahaan yang berdiri dibawah naungan PT. Pindad (Persero) yang bergerak dalam bidang pembuatan komponen Alutsista (Alat Utama Sistem Persenjataan) dan produk komersial untuk PT pindad (persero), beberapa diantara nya adalah sebagai berikut : <br/> Melakukan produksi komponen untuk produk alutsista maupun nonalutsista, dan melengkapi proses assembling (perakitan) pada beberapa komponen produksi, diantara nya :",
+    component: [
+      " Komponen senjata dan munisi",
+      " Komponen kendaraan khusus",
+      " Komponen kendaraan khusus",
+      "Komponen, sarana dan prasarana dalam bidang transportasi",
+      "Komponen, sarana dan prasarana dalam bidang transportasi",
+    ],
   },
   {
-    title: "experiences that connect with people",
-    date: "20 nov",
-    url: "/blog-single",
-    image: blogImage6,
+    title: "JASA",
+    desc: "Komponen, sarana dan prasarana dalam bidang transportasi",
+    component: [
+      "Komponen, sarana dan prasarana dalam bidang transportasi",
+      "Konstruksi",
+      "Excavator",
+      " Komponen, sarana dan prasarana dalam bidang transportasi",
+      "Komponen Alat Berat",
+    ],
+  },
+];
+
+export const CompanyHistoryData = [
+  {
+    title: "PT Pindad Enjiniring Indonesia.",
+    desc: "Berdiri sejak tahun 1992, diawali dengan nama PT Daun Cakra Bhakti.",
+    startDate: "2015/12",
+  },
+  {
+    title: "PT. Cakra Mandiri Pratama",
+    desc: "Tahun 1999 berganti menjadi PT Cakra Mandiri Pratama Indonesia.",
+    startDate: "1999/12",
+  },
+  {
+    title: "PT. Daun Cakra Bhakti",
+    desc: "Berdiri sejak tahun 1992, diawali dengan nama PT Daun Cakra Bhakti.",
+    startDate: "1992/10",
   },
 ];
 
 export const BlogHomeSection = {
-  subTitle: "our news & articles",
-  title: "latest blog posts",
-  text:
-    "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
+  subTitle: "Artikel Baru Kami",
+  title: "Artikel Terbaru",
 };
-
-import blogS1 from "@/images/blog/11.jpg";
-import blogS2 from "@/images/blog/12.jpg";
-import blogS3 from "@/images/blog/13.jpg";
-
-export const BlogSidebarPost = [
-  {
-    title: "basic rules of running web agency",
-    image: blogS1,
-    url: "/blog-single",
-  },
-  {
-    title: "basic rules of running web agency",
-    image: blogS2,
-    url: "/blog-single",
-  },
-  {
-    title: "basic rules of running web agency",
-    image: blogS3,
-    url: "/blog-single",
-  },
-];
-
-import commentImage1 from "@/images/blog/9.jpg";
-import commentImage2 from "@/images/blog/10.jpg";
-
-export const BlogComments = [
-  {
-    image: commentImage1,
-    name: "David Martin",
-    data: "20 Nov, 2018 - 4:00 pm",
-    content:
-      "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer condimentum purus. In non ex at ligula fringilla lobortis et not the aliquet.",
-  },
-  {
-    image: commentImage2,
-    name: "Jessica Brown",
-    data: "20 Nov, 2018 - 4:00 pm",
-    content:
-      "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer condimentum purus. In non ex at ligula fringilla lobortis et not the aliquet.",
-  },
-];
-
-import portfolio01 from "@/images/portfolio/WBA-Trimetri.jpg";
-import portfolio02 from "@/images/portfolio/ALKAPSUS.jpg";
-import portfolio03 from "@/images/portfolio/CAKRA-HOTEL.jpg";
-import portfolio04 from "@/images/portfolio/bruu.jpg";
-import portfolio05 from "@/images/portfolio/5b.jpeg";
-import portfolio06 from "@/images/portfolio/12.jpeg";
-
-export const PortfolioData = [
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio01,
-    url: "/portfolio-details",
-  },
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio02,
-    url: "/portfolio-details",
-  },
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio03,
-    url: "/portfolio-details",
-  },
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio04,
-    url: "/portfolio-details",
-  },
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio05,
-    url: "/portfolio-details",
-  },
-  {
-    title: "Design Styles",
-    categories: ["all", "graphic"],
-    image: portfolio06,
-    url: "/portfolio-details",
-  },
-];
-
-export const PortfolioFilters = [
-  { name: "all" },
-  { name: "graphic" },
-  { name: "branding" },
-  { name: "marketing" },
-  { name: "logos" },
-];
-
-import portfolioD01 from "@/images/portfolio/7.jpg";
-import portfolioD02 from "@/images/portfolio/8.jpg";
-
-export const PortfolioDetailsData = {
-  gallery: [{ image: portfolioD01 }, { image: portfolioD02 }],
-  title: "Design Styles",
-  text:
-    " Tincidunt elit magnis nulla facilisis sagittis sapien nunc amet ultrices dolores sit ipsum velit purus aliquet massa fringilla leo orci. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci dolors sit amet elit amet. ",
-  client: "Jessica Brown",
-  categories: [
-    {
-      name: "Graphic,",
-      url: "#",
-    },
-    {
-      name: "Illustrations,",
-      url: "#",
-    },
-  ],
-  date: "8 Nov, 2018",
-  socials: [
-    {
-      name: "Facebook",
-      url: "#",
-    },
-    {
-      name: "Twitter",
-      url: "#",
-    },
-    {
-      name: "Linkedin",
-      url: "#",
-    },
-  ],
-};
-
-export const ServicePostData = [
-  {
-    title: "Modren Design",
-    text:
-      "Phaseus sit amet tristique lorem ipsum is simply free text ligua donec culis leo sus cipit.",
-    iconName: "mei-settings",
-    url: "/service-details",
-  },
-  {
-    title: "Digital products",
-    text:
-      "Phaseus sit amet tristique lorem ipsum is simply free text ligua donec culis leo sus cipit.",
-    iconName: "mei-transfer",
-    url: "/service-details",
-  },
-  {
-    title: "Marketing Strategy",
-    text:
-      "Phaseus sit amet tristique lorem ipsum is simply free text ligua donec culis leo sus cipit.",
-    iconName: "mei-pie-chart",
-    url: "/service-details",
-  },
-];
-
-export const ServiceHomeTwoData = {
-  subTitle: "welcome to smart meipaly web agency",
-  title: "We design digital products that \n help grow businesses.",
-  text:
-    "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
-};
-
-export const ServiceHomeThreeData = {
-  subTitle: "Services we are offering",
-  title: "Our Services",
-  text:
-    "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
-};
-
-export const ServicePostTwoData = {
-  sectionContent: {
-    title: "We design digital products that \n help grow businesses.",
-    subTitle: "Services we are offering",
-    text:
-      "We are committed to providing our customers with exceptional service \n while offering our employees the best training.",
-  },
-  posts: [
-    {
-      title: "Website Development",
-      iconName: "mei-web-design",
-      url: "/service-details",
-    },
-    {
-      title: "Graphic Designing",
-      iconName: "mei-computer-graphic",
-      url: "/service-details",
-    },
-    {
-      title: "Digital Marketing",
-      iconName: "mei-development-1",
-      url: "/service-details",
-    },
-    {
-      title: "SEo & Content Writing",
-      iconName: "mei-development",
-      url: "/service-details",
-    },
-    {
-      title: "App Development",
-      iconName: "mei-app-development",
-      url: "/service-details",
-    },
-  ],
-};
-
-import serviceOne01 from "@/images/home_1/6.jpg";
-import serviceOne02 from "@/images/home_1/7.jpg";
-import serviceOne03 from "@/images/home_1/8.jpg";
 
 export const ServicePostThreeData = {
   sectionContent: {
-    title: "Let’s create something",
-    subTitle: "what we do",
-    text:
-      "We are committed to providing our customers with exceptional service \n while offering our employees the best training.",
-  },
-  posts: [
-    {
-      title: "web development",
-      image: serviceOne01,
-      url: "/service-details",
-    },
-    {
-      title: "digital marketing",
-      image: serviceOne02,
-      url: "/service-details",
-    },
-    {
-      title: "product branding",
-      image: serviceOne03,
-      url: "/service-details",
-    },
-  ],
-};
-
-export const FunfactData = [
-  {
-    title: "Projects Completed",
-    countNumber: 705,
-  },
-  {
-    title: "Active Clients",
-    countNumber: 480,
-  },
-  {
-    title: "Cups of Coffee",
-    countNumber: 626,
-  },
-  {
-    title: "Happy Clients",
-    countNumber: 774,
-  },
-];
-
-import trustClient01 from "@/images/home_1/4.jpg";
-
-export const TrustClientData = {
-  image: trustClient01,
-  title: "We are trusted by more than 8900 clients",
-  text:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi-dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita-tion ullamco laboris nisi ut aliquip ex ea commodo.",
-  url: "/about",
-};
-
-import ClientCarousel01 from "@/images/client/1.png";
-import ClientCarousel02 from "@/images/client/2.png";
-import ClientCarousel03 from "@/images/client/3.png";
-import ClientCarousel04 from "@/images/client/4.png";
-import ClientCarousel05 from "@/images/client/5.png";
-
-export const ClientCarouselData = {
-  sectionContent: {
-    title: "they trust us",
-    subTitle: "our clients",
-    text:
-      "We are committed to providing our customers with exceptional service \n while offering our employees the best training.",
-  },
-  items: [
-    {
-      url: "#",
-      image: ClientCarousel01,
-    },
-    {
-      url: "#",
-      image: ClientCarousel02,
-    },
-    {
-      url: "#",
-      image: ClientCarousel03,
-    },
-    {
-      url: "#",
-      image: ClientCarousel04,
-    },
-    {
-      url: "#",
-      image: ClientCarousel05,
-    },
-  ],
-};
-
-import aboutOne01 from "@/images/about/1.jpg";
-import aboutOne02 from "@/images/about/2.jpg";
-
-export const AboutOneData = {
-  sectionContent: {
-    title: "build better website alot quicker with meipaly agency",
-    subTitle: "get to know us",
-  },
-  gallery: [aboutOne01, aboutOne02],
-  counter: {
-    title: "Company Started",
-    number: 1990,
+    title: "Berita Terbaru Kami",
   },
 };
 
 import team01 from "@/images/team/DSC023001-1-500x500.jpg";
 import team02 from "@/images/team/pas-foto-website-2-500x500.jpg";
 import team03 from "@/images/team/pas-foto-website-500x500.jpg";
-import team04 from "@/images/team/4.jpg";
-import team05 from "@/images/team/5.jpg";
 
 export const TeamOneData = {
   sectionContent: {
-    title: "expert people",
-    subTitle: "meet the team",
+    title: "Dewan Direksi Kami",
+    subTitle:
+      "Perkenalkan Dewan Direksi Kami, Mereka Merupakan Ahli Di Bidangnya Masing-Masing",
     text:
-      "We are committed to providing our customers with exceptional service \n while offering our employees the best training.",
+      "Perkenalkan Dewan Direksi Kami, Mereka Merupakan Ahli Di Bidangnya Masing-Masing",
   },
-  posts: [
-    {
-      image: team01,
-      name: "Syaifuddin",
-      designation: "Direktur Utama",
-      url: "#",
-      socials: [
-        {
-          name: "Facebook",
-          url: "#",
-        },
-        {
-          name: "Twitter",
-          url: "#",
-        },
-        {
-          name: "Linkedin",
-          url: "#",
-        },
-      ],
-    },
-    {
-      image: team02,
-      name: "Cucun Kalsum",
-      designation: "Direktur Operasional",
-      url: "",
-      socials: [
-        {
-          name: "Facebook",
-          url: "#",
-        },
-        {
-          name: "Twitter",
-          url: "#",
-        },
-        {
-          name: "Linkedin",
-          url: "#",
-        },
-      ],
-    },
-    {
-      image: team03,
-      name: "Tamie Astuti",
-      designation: "Direktur Administrasi & Keuangan",
-      url: "#",
-      socials: [
-        {
-          name: "Facebook",
-          url: "#",
-        },
-        {
-          name: "Twitter",
-          url: "#",
-        },
-        {
-          name: "Linkedin",
-          url: "#",
-        },
-      ],
-    },
-  ],
-};
-
-import video01 from "@/images/about/3.jpg";
-
-export const VideoOneData = {
-  sectionContent: {
-    title: "Make amazing websites without touching cod",
-    subTitle: "the only design you need",
-    text:
-      "Tincidunt elit magnis nulla facilisis sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci. Lorem ipsum dolors sit amet elit magnis amet ultrices purus aliquet.",
-  },
-  video: {
-    image: video01,
-    ID: "y2Eqx6ys1hQ",
-    title: "Watch Video",
-  },
-};
-
-export const SubscribeFormData = {
-  sectionContent: {
-    title: "Subscribe us",
-    subTitle: "don’t miss out our latest updates",
-  },
-};
-
-import testimonial01 from "@/images/home_1/t1.jpg";
-import testimonial02 from "@/images/home_1/t2.jpg";
-import testimonial03 from "@/images/home_1/t3.jpg";
-
-export const TestimonialsOneData = {
-  sectionContent: {
-    subTitle: "our testimonials",
-    title: "happy customers",
-  },
-  posts: [
-    {
-      name: "Cecilia Colon",
-      designation: "Director",
-      image: testimonial01,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Chase Hanson",
-      designation: "CO Founder",
-      image: testimonial02,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Mittie Flores",
-      designation: "Manager",
-      image: testimonial03,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Carrie Sims",
-      designation: "Director",
-      image: testimonial01,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Anne Stone",
-      designation: "CO Founder",
-      image: testimonial02,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Hunter Brewer",
-      designation: "Manager",
-      image: testimonial03,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Carrie Sims",
-      designation: "Director",
-      image: testimonial01,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Anne Stone",
-      designation: "CO Founder",
-      image: testimonial02,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-    {
-      name: "Hunter Brewer",
-      designation: "Manager",
-      image: testimonial03,
-      content:
-        "This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch. There are many variations of passages of available, but the majority have suffered alteration in some form by injected hum",
-      date: "25 nov, 2018",
-    },
-  ],
-};
-
-import featureTab01 from "@/images/home_1/c1.jpg";
-import featureTab02 from "@/images/home_1/c2.jpg";
-import featureTab03 from "@/images/home_1/c3.jpg";
-
-export const FeatureTabData = {
-  sectionContent: {
-    title: "why choose us",
-    subTitle: "our benefits",
-    text:
-      "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
-  },
-  posts: [
-    {
-      title: "Latest technology",
-      content:
-        "There are many variations of passages of lorem ipsum available, but the majority have  suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
-      image: featureTab01,
-      lists: [
-        {
-          item: "Self-contained, state-of-the-art time clock",
-        },
-        {
-          item: "Scalability of up to 500 employees per time clock",
-        },
-        {
-          item: "The ability to connect up to 32 time clocks",
-        },
-        {
-          item: "Employee self-enrollment",
-        },
-        {
-          item: "Payroll integration",
-        },
-        {
-          item: "Built-in backup camera to verify failed punches",
-        },
-      ],
-    },
-    {
-      title: "Awesome Support",
-      content:
-        "There are many variations of passages of lorem ipsum available, but the majority have  suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
-      image: featureTab02,
-      lists: [
-        {
-          item: "Self-contained, state-of-the-art time clock",
-        },
-        {
-          item: "Scalability of up to 500 employees per time clock",
-        },
-        {
-          item: "The ability to connect up to 32 time clocks",
-        },
-        {
-          item: "Employee self-enrollment",
-        },
-        {
-          item: "Payroll integration",
-        },
-        {
-          item: "Built-in backup camera to verify failed punches",
-        },
-      ],
-    },
-    {
-      title: "1 Click demo install",
-      content:
-        "There are many variations of passages of lorem ipsum available, but the majority have  suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
-      image: featureTab03,
-      lists: [
-        {
-          item: "Self-contained, state-of-the-art time clock",
-        },
-        {
-          item: "Scalability of up to 500 employees per time clock",
-        },
-        {
-          item: "The ability to connect up to 32 time clocks",
-        },
-        {
-          item: "Employee self-enrollment",
-        },
-        {
-          item: "Payroll integration",
-        },
-        {
-          item: "Built-in backup camera to verify failed punches",
-        },
-      ],
-    },
-  ],
 };
 
 export const ParallaxOneData = {
@@ -963,31 +530,13 @@ export const ParallaxOneData = {
 
 export const PortfolioHomeData = {
   sectionContent: {
-    title: "work showcase",
-    subTitle: "our portfolio",
-    text:
-      "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
+    title: "Bisnis Kami",
+    subTitle: "Lihat Semua Bisnis Kami",
   },
 };
 
-import video02 from "@/images/home_1/1b.jpeg";
-
-export const VideoTwoData = {
-  sectionContent: {
-    title: "Digital Experience",
-    subTitle: "how do we works",
-    text:
-      "We are committed to providing our customers with exceptional service while\n offering our employees the best training.",
-  },
-  video: {
-    title: "Watch Video",
-    ID: "Q6sIyEGRhd8",
-    image: video02,
-  },
-};
-
-import aboutTwo01 from "@/images/home_1/2.jpg";
-import aboutTwo02 from "@/images/home_1/1.jpg";
+import aboutTwo01 from "@/images/about/2.jpg";
+import aboutTwo02 from "@/images/about/1.png";
 
 export const AboutTwoData = {
   sectionContent: {
@@ -1003,55 +552,14 @@ export const AboutTwoData = {
   gallery: [aboutTwo01, aboutTwo02],
 };
 
-import featureTwo01 from "@/images/home_1/5.jpg";
+import Axios from "axios";
 
-export const FeatureTwoData = {
-  sectionContent: {
-    title: "real experience",
-    subTitle: "our core features",
-    text:
-      " We are committed to providing our customers with exceptional service while offering our employees the best training. ",
-  },
-  posts: [
-    {
-      title: "No Coding Skills Require",
-      text:
-        "There are many variations of passages of lorem ipsum available, but the majority have suffered.",
-    },
-    {
-      title: "Online Documentation",
-      text:
-        "There are many variations of passages of lorem ipsum available, but the majority have suffered.",
-    },
-    {
-      title: "SEO Optimized",
-      text:
-        "There are many variations of passages of lorem ipsum available, but the majority have suffered.",
-    },
-  ],
-  image: {
-    text: "Total design freedom \n for everyone.",
-    path: featureTwo01,
-  },
-};
-
-export const CallToActionTwoData = [
-  {
-    label: "View our Recent Work",
-    url: "/portfolio",
-  },
-  {
-    label: "Reqeust a free quote",
-    url: "/contact",
-  },
-];
-
-import axios from "axios";
 const URL = "http://localhost:4000";
+
 //get
 export const getArticles = async () => {
   try {
-    const response = await axios.get(`${URL}/blog/articles`);
+    const response = await Axios.get(`${URL}/blog/articles`);
     const result = await response.data;
     return { data: result };
   } catch (error) {
@@ -1061,7 +569,7 @@ export const getArticles = async () => {
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`${URL}/products`);
+    const response = await Axios.get(`${URL}/products`);
     const result = await response.data;
 
     return { data: result };
@@ -1072,7 +580,7 @@ export const getProducts = async () => {
 
 export const getManagements = async () => {
   try {
-    const response = await axios.get(`${URL}/managements`);
+    const response = await Axios.get(`${URL}/managements`);
     const result = await response.data;
 
     return { data: result };
@@ -1084,7 +592,7 @@ export const getManagements = async () => {
 //getDetail
 export const getArticleBySlug = async slug => {
   try {
-    const response = await axios.get(`${URL}/blog/article/${slug}`);
+    const response = await Axios.get(`${URL}/blog/article/${slug}`);
     const result = response.data;
 
     return result;
@@ -1095,7 +603,7 @@ export const getArticleBySlug = async slug => {
 
 export const getProductBySlug = async slug => {
   try {
-    const response = await axios.get(`${URL}/product/${slug}`);
+    const response = await Axios.get(`${URL}/product/${slug}`);
     const result = response.data;
 
     return result;
@@ -1106,7 +614,7 @@ export const getProductBySlug = async slug => {
 
 export const getManagementBySlug = async slug => {
   try {
-    const response = await axios.get(`${URL}/management/${slug}`);
+    const response = await Axios.get(`${URL}/management/${slug}`);
     const result = response.data;
 
     return result;
@@ -1119,10 +627,9 @@ export const getManagementBySlug = async slug => {
 
 export const createArticle = async formData => {
   try {
-    await axios
-      .post(`${URL}/blog/article/create`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
+    await Axios.post(`${URL}/blog/article/create`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    })
       .then(response => console.log(response.data))
       .catch(error => console.log(error.response.message));
   } catch (error) {
@@ -1132,12 +639,11 @@ export const createArticle = async formData => {
 
 export const createProduct = async formData => {
   try {
-    await axios
-      .post(`${URL}/product/create`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+    await Axios.post(`${URL}/product/create`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then(response => response.data.message)
       .then(data => console.log("Berhasil Upload: ", data))
       .catch(error => console.log(error));
@@ -1148,10 +654,9 @@ export const createProduct = async formData => {
 
 export const createManagement = async formData => {
   try {
-    await axios
-      .post(`${URL}/management/create`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
+    await Axios.post(`${URL}/management/create`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    })
       .then(response => console.log(response.data.message))
       .catch(error => console.log(error.response.message));
   } catch (error) {
@@ -1162,10 +667,9 @@ export const createManagement = async formData => {
 //update
 export const updateArticle = async ({ slug, formData }) => {
   try {
-    await axios
-      .put(`${URL}/blog/article/update/${slug}`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
+    await Axios.put(`${URL}/blog/article/update/${slug}`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    })
       .then(response => console.log("respon server: ", response.data))
       .catch(error => console.log(error));
   } catch (error) {
@@ -1174,12 +678,11 @@ export const updateArticle = async ({ slug, formData }) => {
 };
 export const updateProduct = async ({ slug, formData }) => {
   try {
-    await axios
-      .put(`${URL}/product/update/${slug}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+    await Axios.put(`${URL}/product/update/${slug}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then(response => console.log(response.data.message))
       .catch(error => console.log(error));
   } catch (error) {
@@ -1189,12 +692,11 @@ export const updateProduct = async ({ slug, formData }) => {
 
 export const updateManagement = async ({ slug, formData }) => {
   try {
-    await axios
-      .put(`${URL}/management/update/${slug}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+    await Axios.put(`${URL}/management/update/${slug}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then(response => console.log(response.data.message))
       .catch(error => console.log(error));
   } catch (error) {
@@ -1205,10 +707,9 @@ export const updateManagement = async ({ slug, formData }) => {
 //delete
 export const deleteArticle = async slug => {
   try {
-    await axios
-      .delete(`${URL}/blog/article/delete/${slug}`)
-
-      .catch(error => console.log(error));
+    await Axios.delete(`${URL}/blog/article/delete/${slug}`).catch(error =>
+      console.log(error)
+    );
   } catch (error) {
     console.log(error);
   }
@@ -1216,8 +717,7 @@ export const deleteArticle = async slug => {
 
 export const deleteProduct = async slug => {
   try {
-    await axios
-      .delete(`${URL}/product/delete/${slug}`)
+    await Axios.delete(`${URL}/product/delete/${slug}`)
       .then(response => console.log(response.data.message))
       .catch(error => console.log(error));
   } catch (error) {
@@ -1227,8 +727,7 @@ export const deleteProduct = async slug => {
 
 export const deleteManagement = async slug => {
   try {
-    await axios
-      .delete(`${URL}/management/delete/${slug}`)
+    await Axios.delete(`${URL}/management/delete/${slug}`)
       .then(response => console.log(response.data.message))
       .catch(error => console.log(error));
   } catch (error) {
@@ -1247,8 +746,6 @@ const showFormattedDate = date => {
 };
 const showFormattedDate2 = date => {
   const options = {
-  
-   
     month: "long",
     day: "numeric",
   };

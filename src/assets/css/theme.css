@@ -44,6 +44,10 @@ License URI:
 30. Color Preset
 */
 
+:root {
+  --orange: #fd632f;
+}
+
 /*----------------------------------------------------
 / 1. Header 01
 ------------------------------------------------------*/
@@ -109,10 +113,10 @@ License URI:
   width: 100%;
 }
 .mainmenu ul ul.sub-menu {
-  background: #000;
+  background: #363636;
   width: 200px;
   z-index: 9;
-  text-align: center;
+  text-transform: uppercase;
   padding: 25px 30px 13px;
   transition: all ease 400ms;
   -webkit-transition: all ease 400ms;
@@ -121,9 +125,9 @@ License URI:
   opacity: 0;
   left: 50%;
   margin: auto;
+  text-align: start;
   position: absolute;
   right: 0;
-  text-align: center;
   top: 100px;
   transform: translateX(-50%);
   z-index: 2;
@@ -444,15 +448,15 @@ License URI:
   z-index: 1;
 }
 .ab_img1 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 464px;
+  height: 530px;
   -webkit-box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.3);
   box-shadow: -2px 4px 30px 0px rgba(0, 0, 0, 0.3);
 }
 .ab_img2 {
   position: absolute;
-  left: 0;
+  right: 120px;
   top: 100px;
   z-index: 2;
 }
@@ -466,8 +470,8 @@ License URI:
   height: 458px;
 }
 .ab_img2 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 520px;
+  height: 444px;
   -webkit-box-shadow: -2px 4px 35px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: -2px 4px 35px 0px rgba(0, 0, 0, 0.3);
   box-shadow: -2px 4px 35px 0px rgba(0, 0, 0, 0.3);
@@ -601,12 +605,13 @@ License URI:
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(230, 43, 74, 0.8);
+  background: #f87219ff;
   overflow: hidden;
   width: 0;
-  height: 100%;
+  height: 25%;
   content: "";
   transition: all 0.4s ease-out;
+  opacity: 0.8;
   -moz-transition: all 0.4s ease-out;
   -webkit-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
@@ -624,7 +629,8 @@ License URI:
   -moz-transition: all ease 400ms;
 }
 .singlefolio .folioHover h4 {
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: bold;
   line-height: 0.8;
   color: #fff;
   letter-spacing: 0.8px;
@@ -746,6 +752,7 @@ License URI:
 .singleTM {
   width: 100%;
   height: auto;
+
   position: relative;
   overflow: hidden;
   transition: all ease 400ms;
@@ -760,8 +767,9 @@ License URI:
   position: relative;
 }
 .tm_img img {
+  object-fit: contain;
   width: 100%;
-  height: auto;
+  height: 500px;
   max-width: none;
   width: calc(100% + 20px);
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -1123,7 +1131,8 @@ License URI:
 / 11. Testimonail Section
 ------------------------------------------------------*/
 .testimonial {
-  background: url(../images/bg/3.jpg) no-repeat fixed center / cover;
+  background: url(../images/bg/Projects.jpg) no-repeat fixed center / cover;
+
   padding-bottom: 113px;
 }
 .testimonial_content {
@@ -1217,11 +1226,20 @@ License URI:
   color: #000;
   margin: 0 0 13px;
 }
-.lbi_details h2 a {
+
+.text-orange {
+  color: #fd632f;
+  transition: 1s;
+}
+.text-orange:hover {
   color: #000;
+  transition: 1s;
+}
+.lbi_details h2 a {
+  color: #fd632f;
 }
 .lbi_details h2 a:hover {
-  color: #fd632f !important;
+  color: #000 !important;
 }
 .lbi_details .learnM {
   display: inline-block;
@@ -1742,17 +1760,22 @@ License URI:
 .single_wedo {
   position: relative;
   overflow: hidden;
+  height: 500px;
   -moz-transition: all 0.4s ease-out;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
+  box-sizing: border-box;
 }
 .single_wedo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-size: cover;
 }
+
 .single_wedo .overlay_wedo {
   width: 100%;
   height: 100%;
+
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1763,53 +1786,47 @@ License URI:
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
-.single_wedo .overlay_wedo:after {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  margin: auto;
-  background: rgba(230, 43, 74, 0.7);
-  overflow: hidden;
-  width: 0;
-  height: 100%;
-  content: "";
-  visibility: hidden;
-  opacity: 0;
-  -moz-transition: all 0.4s ease-out;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-}
-.single_wedo:hover .overlay_wedo:after {
+
+.single_wedo:hover {
   width: 100%;
   opacity: 1;
+
   visibility: visible;
 }
 
+.single_wedo .overlay_wedo h1 {
+  color: #fd632f;
+  font-size: 30px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.96px;
+  padding: 20px 0 0 15px;
+  text-transform: uppercase;
+  z-index: 9;
+}
+
 .single_wedo .overlay_wedo a {
-  height: 68px;
-  color: #000000;
-  line-height: 0.8;
-  font-size: 18px;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
   letter-spacing: 0.72px;
   text-transform: uppercase;
   display: inline-block;
-  background: #fff;
+  background: #fd632f;
   text-align: center;
-  padding: 26px 0;
-  width: 240px;
+  padding: 10px 0;
+  width: 150px;
   z-index: 9;
   position: absolute;
-  left: 0;
-  right: 0;
   bottom: 0;
-  top: 0;
-  margin: auto;
+  left: 50px;
+  right: 0;
+  top: 380px;
+  font-weight: 500;
+  /* margin: auto; */
 }
 .single_wedo .overlay_wedo a:hover {
   color: #fff;
-  background: #000;
+  background: rgba(0, 0, 0, 0);
 }
 
 /*----------------------------------------------------
@@ -1966,7 +1983,7 @@ License URI:
   padding-left: 90px;
 }
 .ab_detail_wrap .sec_title {
-  margin-bottom: 46px;
+  margin-bottom: 10px;
 }
 .ab_detail_wrap .sec_desc {
   line-height: 36px;
@@ -2310,7 +2327,7 @@ License URI:
   font-weight: 700;
   display: block;
   height: 31px;
-  width: 65px;
+  width: 75px;
   background: #fd632f !important;
   color: #ffffff;
   padding: 11px 0;
@@ -2627,8 +2644,8 @@ textarea.input-form:focus {
 }
 .meipaly_post_widget {
   position: relative;
-  background: #f4f4f4;
-  padding: 50px;
+  /* background: #f4f4f4; */
+  padding: 20px;
 }
 .mpw_item {
   position: relative;
@@ -3456,6 +3473,15 @@ textarea.input-form:focus {
 /*----------------------------------------------------
 / 30. Color Preset
 ------------------------------------------------------*/
+.text-link-orange {
+  color: var(--orange);
+}
+.text-link-orange:hover {
+  color: black;
+}
+.bg-orange {
+  background-color: #fd632f;
+}
 .color_settings {
   position: fixed;
   backface-visibility: hidden;
@@ -3554,7 +3580,7 @@ textarea.input-form:focus {
 
 .main-slider__title {
   white-space: pre-line;
-  font-size: 40px;
+  font-size: 32px;
   text-transform: uppercase;
   color: #fff;
   line-height: 1.15em;
@@ -3692,5 +3718,6 @@ textarea.input-form:focus {
 
 .main-slider__two .main-slider__subtext,
 .main-slider__two .main-slider__title {
-  color: #000000;
+  color: #fff;
+  text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.55);
 }

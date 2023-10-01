@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-news-[slug]-jsx",
+    "path": "/news/[slug]/",
+    "result": {"pageContext":{"matchPath":"/news/:slug"}},
+    "staticQueryHashes": [],
+    "matchPath": "/news/:slug"}

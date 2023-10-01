@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-dashboard-products-edit-[slug]-js",
+    "componentChunkName": "component---src-pages-dashboard-products-edit-[slug]-jsx",
     "path": "/dashboard/products/edit/[slug]/",
     "result": {"pageContext":{"matchPath":"/dashboard/products/edit/:slug"}},
     "staticQueryHashes": [],

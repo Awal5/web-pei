@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-products-[slug]-jsx",
+    "path": "/products/[slug]/",
+    "result": {"pageContext":{"matchPath":"/products/:slug"}},
+    "staticQueryHashes": [],
+    "matchPath": "/products/:slug"}
